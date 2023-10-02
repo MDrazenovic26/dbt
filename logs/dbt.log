@@ -1,0 +1,46 @@
+[0m13:37:02.989272 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029747B4A7D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002974A483850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002974A4836A0>]}
+
+
+============================== 13:37:02.991270 | 26a2df47-75de-4f20-aaa7-2a8c2f2c0193 ==============================
+[0m13:37:02.991270 [info ] [MainThread]: Running with dbt=1.6.4
+[0m13:37:02.992270 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\mdraz\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt init snowflake_dbt', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:37:02.993270 [debug] [MainThread]: Starter project path: C:\Users\mdraz\dbt-core-demo\lib\site-packages\dbt\include\starter_project
+[0m13:37:03.007270 [info ] [MainThread]: 
+Your new dbt project "snowflake_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:37:03.008270 [info ] [MainThread]: Setting up your profile.
+[0m13:37:08.041322 [error] [MainThread]: Encountered an error:
+
+[0m13:37:08.042322 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\mdraz\dbt-core-demo\lib\site-packages\dbt\cli\requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\mdraz\dbt-core-demo\lib\site-packages\dbt\cli\requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\mdraz\dbt-core-demo\lib\site-packages\dbt\cli\main.py", line 469, in init
+    results = task.run()
+  File "C:\Users\mdraz\dbt-core-demo\lib\site-packages\dbt\task\init.py", line 307, in run
+    adapter = self.ask_for_adapter_choice()
+  File "C:\Users\mdraz\dbt-core-demo\lib\site-packages\dbt\task\init.py", line 233, in ask_for_adapter_choice
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+  File "C:\Users\mdraz\dbt-core-demo\lib\site-packages\click\termui.py", line 166, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\mdraz\dbt-core-demo\lib\site-packages\click\termui.py", line 149, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m13:37:08.044322 [debug] [MainThread]: Command `dbt init` failed at 13:37:08.044322 after 5.06 seconds
+[0m13:37:08.044322 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029747B4A7D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002974A4DCA30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002974A4DCCA0>]}
+[0m13:37:08.044322 [debug] [MainThread]: Flushing usage events
