@@ -44,3 +44,72 @@ click.exceptions.Abort
 [0m13:37:08.044322 [debug] [MainThread]: Command `dbt init` failed at 13:37:08.044322 after 5.06 seconds
 [0m13:37:08.044322 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029747B4A7D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002974A4DCA30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002974A4DCCA0>]}
 [0m13:37:08.044322 [debug] [MainThread]: Flushing usage events
+[0m13:53:47.478708 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC7CC0ED90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC7D829AC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC7D8294F0>]}
+
+
+============================== 13:53:47.480708 | 03c7c966-9157-47ca-9c16-77478c18c10d ==============================
+[0m13:53:47.480708 [info ] [MainThread]: Running with dbt=1.6.4
+[0m13:53:47.480708 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\mdraz\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:53:47.480708 [info ] [MainThread]: dbt version: 1.6.4
+[0m13:53:47.481708 [info ] [MainThread]: python version: 3.8.10
+[0m13:53:47.481708 [info ] [MainThread]: python path: c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\scripts\python.exe
+[0m13:53:47.481708 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m13:53:47.498708 [debug] [MainThread]: Traceback (most recent call last):
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\adapters\factory.py", line 58, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\mdraz\AppData\Local\Programs\Python\Python38\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 2, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager  # noqa
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\adapters\snowflake\connections.py", line 17, in <module>
+    import snowflake.connector
+ModuleNotFoundError: No module named 'snowflake.connector'; 'snowflake' is not a package
+
+[0m13:53:47.498708 [error] [MainThread]: Encountered an error:
+No module named 'snowflake.connector'; 'snowflake' is not a package
+[0m13:53:47.499709 [error] [MainThread]: Traceback (most recent call last):
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\cli\requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\cli\requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\cli\main.py", line 427, in debug
+    results = task.run()
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\task\debug.py", line 122, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\task\debug.py", line 210, in _load_profile
+    profile: Profile = Profile.render(
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\config\profile.py", line 436, in render
+    return cls.from_raw_profiles(
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\config\profile.py", line 401, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\config\profile.py", line 355, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\config\profile.py", line 165, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\adapters\factory.py", line 212, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\adapters\factory.py", line 58, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\mdraz\AppData\Local\Programs\Python\Python38\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 2, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager  # noqa
+  File "c:\users\mdraz\onedrive\desktop\posao\valcon\dbt\lib\site-packages\dbt\adapters\snowflake\connections.py", line 17, in <module>
+    import snowflake.connector
+ModuleNotFoundError: No module named 'snowflake.connector'; 'snowflake' is not a package
+
+[0m13:53:47.501709 [debug] [MainThread]: Command `dbt debug` failed at 13:53:47.501709 after 0.04 seconds
+[0m13:53:47.502709 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC7CC0ED90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC7F025C70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC7BB427C0>]}
+[0m13:53:47.502709 [debug] [MainThread]: Flushing usage events
